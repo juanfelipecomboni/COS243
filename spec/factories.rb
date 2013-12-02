@@ -24,9 +24,9 @@ FactoryGirl.define do
   factory :referee do
     sequence(:file_location) do |i|
       location = Rails.root.join('code',
-				 'referees',
-				 'test',
-				 "FactoryGirl-fake-code-#{i}").to_s
+                                 'referees',
+                                 'test',
+                                 "FactoryGirl-fake-code-#{i}").to_s
       FileUtils.touch(location)
       location
     end
@@ -55,10 +55,10 @@ FactoryGirl.define do
       association :manager, factory: :contest
 
       before(:create) do |match|
-	match.manager.referee.players_per_game.times do
-	  p = create(:player, contest: match.manager)
-	  create(:player_match, player: p, match: match)
-	end
+        match.manager.referee.players_per_game.times do
+          p = create(:player, contest: match.manager)
+          create(:player_match, player: p, match: match)
+        end
       end
     end
 
@@ -72,9 +72,9 @@ FactoryGirl.define do
     contest
     sequence(:file_location) do |i|
       location = Rails.root.join('code',
-				 'players',
-				 'test',
-				 "FactoryGirl-fake-code-#{i}").to_s
+                                 'players',
+                                 'test',
+                                 "FactoryGirl-fake-code-#{i}").to_s
       FileUtils.touch(location)
       location
     end
