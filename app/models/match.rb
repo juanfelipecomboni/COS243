@@ -9,7 +9,7 @@ class Match < ActiveRecord::Base
   validates :status, presence: true
   validates_date :completion, :on_or_before => lambda { Time.now.change(:usec =>0) }, :if => :check_completed_things
   validates_datetime :earliest_start, :if => :check_start_things
-  #validate :check_number_of_players
+  validate :check_number_of_players
   
   def check_number_of_players
     if self.players && self.manager
