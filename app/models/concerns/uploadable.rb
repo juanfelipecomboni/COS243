@@ -27,4 +27,4 @@ module Uploadable
     end
     self.file_location = file_location
   end
-end
+end 

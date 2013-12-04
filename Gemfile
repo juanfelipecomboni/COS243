@@ -9,7 +9,7 @@ gem 'sqlite3'
 gem 'validates_timeliness', github: 'softace/validates_timeliness', branch: 'support_for_rails4'
 
 gem 'bcrypt-ruby', '~>3.0.0'
-
+gem "guard"
 group :test do
   gem 'capybara'
   gem 'factory_girl_rails'
